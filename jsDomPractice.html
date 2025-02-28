@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceing JS/DOM Interface</title>
+</head>
+<body>
+    <h1 id="myHeading"></h1>
+    <p>The centeral theme of Mary Shelley's Frankenstein is clearly laid out in the first few pages of the text(1).</p>
+
+    <script>
+        var header = document.getElementById("myHeading");
+        header.innerHTML = "My essay on Frankenstein";
+
+        // appendChild()
+        var footnote = document.createElement("p");
+        footnote.innerHTML = "1. From page 5 of <i>Frankenstein<i>"
+            // add the child
+            document.body.appendChild(footnote);
+
+            //add another paragraph - you will have to use insertBefore
+            var paragraph = document.getElementById("newpara");
+            paragraph.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce iaculis quam nec ante pulvinar pretium. Vestibulum auctor ligula quam, bibendum maximus enim vestibulum quis. Integer sed est lobortis, dictum purus quis, ornare ipsum. Cras tincidunt ullamcorper nisi, eget semper risus. Etiam in aliquam odio, eget tristique massa. Sed suscipit viverra urna, ut tempus magna viverra non. Etiam consequat tempor elit sit amet aliquam. Donec diam justo, congue nec ultrices ac, pharetra eget neque. Pellentesque congue posuere urna, sed ornare ligula. Vivamus purus tortor, blandit eu magna a, ullamcorper eleifend quam. Maecenas at tristique velit. Nam ullamcorper egestas risus at eleifend. Etiam sed dolor sed erat elementum laoreet sed ut elit. Vivamus tempor justo maximus cursus dignissim. Quisque lacinia malesuada nisl et feugiat(2)."
+
+
+            //add another footnote at the end of the page
+
+            var footNote2 = document.createElement ("p");
+            footNote2.innerHTML = "This is my second footnote";
+            document.body.appendChild(footNote2);
+
+            // use insertBefore()
+            var subTitle = document.createElement("h2")
+            subTitle.innerHTML = "This is my sub title";
+
+            // capture the element we want to add to our h2 before
+            // see newPara variable above
+            document.body.insertBefore(subTitle, paragraph);
+    </script>
+</body>
+</html>
