@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.(attribute) vs setAttribute</title>
+</head>
+<body>
+    <p>.(attribute) vs setAttribute</p>
+
+    <p id="crash">
+        Inspect the p tags to see how using . notation is different than setAttribute
+    </p>
+
+    <p id="something">
+        Another paragraph.
+    </p>
+
+    <script>
+        var paragraph = document.getElementById("crash");
+
+        /*
+        This wont work because font-size needs to be written as fontSize. Notice that this error causes the entire script to crash. Commenting out this line will allow the program to work correctly */
+        //paragraph.style.fontSize = "50px";
+
+        //If we use setAttribute with the wrong notation, it will not cause the program to crash
+        paragraph.setAttribute("style", "font-size: 50px;")
+
+        var para2 = document.getElementById("something");
+
+        /* we can change style using . annotation because it is a standard attribute of p elements */
+        para2.style.color = "red";
+        para2.style.fontSize = "25px";
+
+        /*
+            This will not create an attrubyte somethign with the value "this won't work" Because something isnt a standrd attribute of p elements */
+            //para2.something = "This wont work";
+
+            /* using setAttribute will create the attribute something and assign its value. */
+            para2.setAttribute
+    </script>
+</body>
+</html>
