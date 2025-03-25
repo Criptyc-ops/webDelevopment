@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Keyboard Interactions</title>
+</head>
+<body>
+    <label for="name">First Name:</label>
+    <input type="text" onkeydown="checkKey(event)">
+
+    <script>
+        function checkKey(e){
+            if(e.key === 'Enter') {
+                alert('you pressed enter!');
+            }
+
+            if(e.key === 'd' || e.key === 'D') {
+                alert("you pressed D or d")
+            }
+        }
+    </script>
+</body>
+</html>
